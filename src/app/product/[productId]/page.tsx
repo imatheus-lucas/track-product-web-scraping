@@ -28,7 +28,7 @@ export default async function Product({ params: { productId } }: PorudtcProps) {
         <main className="h-screen w-screen container">
             <section className="flex gap-8 justify-between ">
                 <div className="h-[500px] border rounded-md w-full flex items-center justify-center">
-                    <Image className="rounded-md   object-cover" src={productFormatted.image} alt="logo" width={400} height={400} />
+                    <Image className="rounded-md object-contain max-h-80" src={productFormatted.image} alt="logo" width={400} height={400} />
                 </div>
                 <div className="flex flex-col gap-4 h-[500px] justify-between">
                     <h2>

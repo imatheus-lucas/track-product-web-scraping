@@ -44,7 +44,7 @@ export function SearchBar() {
     return (
         <form onSubmit={handleSubmit} className="flex flex-wrap  gap-4 mt-12">
             <Input type="url" onChange={(e) => setSearch(e.target.value)} value={search} className="flex-1 min-w-[200px] w-full text-base focus:outline-none " placeholder="Enter product link" />
-            <Button type="submit" disabled={!search || loading} className="disabled:opacity-70 min-w-24">
+            <Button type="submit" disabled={!search || loading} className="disabled:opacity-40 min-w-24">
                 {loading ? <Spinner /> : "Search"}
             </Button>
         </form>
