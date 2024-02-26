@@ -12,7 +12,7 @@ export function SearchBar() {
     const isValidMercadoLivreUrl = (url: string) => {
         const parsedURL = new URL(url);
         const hostname = parsedURL.hostname;
-        return hostname === 'www.mercadolivre.com.br' || hostname === 'mercadolivre.com.br';
+        return hostname === 'www.mercadolivre.com.br' || hostname === 'mercadolivre.com.br' || 'produto.mercadolivre.com.br';
     }
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
