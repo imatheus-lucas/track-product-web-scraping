@@ -5,7 +5,6 @@ import prisma from '@/lib/prisma';
 import { scrape } from '@/lib/scrape';
 import { getAveragePrice, getHighestPrice, getLowestPrice } from '@/lib/utils';
 import { NextResponse } from 'next/server';
-export const maxDuration = 10; // This function can run for a maximum of 10 seconds
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
