@@ -66,12 +66,16 @@ export default async function Product({ params: { productId } }: PorudtcProps) {
                     <TrackButton productId={productFormatted.id} tracking={productFormatted.tracking} />
                 </div>
             </section>
-            <section>
-                <h2 className="text-lg font-bold py-4">Product Description</h2>
-                <p className="text-sm leading-relaxed">
-                    {productFormatted.description}
-                </p>
-            </section>
+            {
+                productFormatted.description && (
+                    <section>
+                        <h2 className="text-lg font-bold py-4">Product Description</h2>
+                        <p className="text-sm leading-relaxed">
+                            {productFormatted.description}
+                        </p>
+                    </section>
+                )
+            }
         </main >
     )
 }
