@@ -2,7 +2,7 @@ import axios from "axios"
 import { load } from "cheerio"
 
 export async function scrape(productUrl: string) {
-    const response = await axios.get(`http://api.scraperapi.com?api_key=5cf2e29dbf6f8b8b4449df079a53cf94&url=${productUrl}`)
+    const response = await axios.get(`http://api.scraperapi.com?api_key=${process.env.SCRAPE_API_KEY}&url=${productUrl}`)
     const $ = load(response.data)
 
     const title = $('h1.ui-pdp-title').text()

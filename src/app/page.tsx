@@ -2,21 +2,22 @@ import { SearchBar } from "@/components/search-bar";
 import { getAllProducts } from "@/lib/actions/web-scraping";
 import Image from "next/image";
 import Link from "next/link";
-
+import Drone from '../assets/drone.svg';
 export default async function Home() {
 
   const products = await getAllProducts()
 
   return (
-    <main className="h-screen w-screen container">
-      <section className="flex flex-col justify-center gap-4 px-20 py-24">
+    <main className="h-screen w-screen md:container p-4">
+      <section className="flex flex-col  justify-center items-center gap-4 md:px-20 ">
+        <Image src={Drone} alt="image logo" width={300} height={300} />
         <SearchBar />
       </section>
       {
         products.length > 0 && (
           <section>
             <h1 className="text-2xl font-bold py-10">Trending</h1>
-            <div className="grid grid-cols-5 gap-4 p-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 p-4">
               {
                 products.map((product) => (
                   <Link key={product.id} href={`product/${product.id}`}>

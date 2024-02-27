@@ -1,7 +1,5 @@
 import { TrackButton } from "@/components/track-button";
-import { Button } from "@/components/ui/button";
 import { getProductById } from "@/lib/actions/web-scraping";
-import { BookmarkIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 
 type PorudtcProps = {
@@ -26,23 +24,19 @@ export default async function Product({ params: { productId } }: PorudtcProps) {
     }
     return (
         <main className="h-screen w-screen container">
-            <section className="flex gap-8 justify-between ">
+            <section className="flex flex-col md:flex-row gap-8 justify-between ">
                 <div className="h-[500px] border rounded-md w-full flex items-center justify-center">
                     <Image className="rounded-md object-contain max-h-80" src={productFormatted.image} alt="logo" width={400} height={400} />
                 </div>
-                <div className="flex flex-col gap-4 h-[500px] justify-between">
+                <div className="flex flex-col gap-4 justify-between ">
                     <h2>
                         {productFormatted.title}
                     </h2>
                     <a href={productFormatted.url} target="_blank" className="text-xs text-muted-foreground">Visit Product</a>
-                    <div>
-                        <Button variant="secondary">
-                            <BookmarkIcon className="h-5 w-5 text-primary" />
-                        </Button>
-                    </div>
+
                     <div className="w-full h-px bg-gray-300"></div>
 
-                    <span className="text-lg font-bold py-4">{productFormatted.currentPrice}</span>
+                    <span className="text-lg font-bold ">{productFormatted.currentPrice}</span>
 
                     <div className="w-full h-px bg-gray-300"></div>
                     <div className="grid grid-cols-2 gap-2">
@@ -68,7 +62,7 @@ export default async function Product({ params: { productId } }: PorudtcProps) {
             </section>
             {
                 productFormatted.description && (
-                    <section>
+                    <section className="pb-8">
                         <h2 className="text-lg font-bold py-4">Product Description</h2>
                         <p className="text-sm leading-relaxed">
                             {productFormatted.description}
